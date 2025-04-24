@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizblock</title>
+    <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/notes.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+
+    <script src="./scripts/templates.js"></script> <!-- Wichtig: vor der script.js definieren! -->
+    <script src="./script.js"></script>
+</head>
+
+<body onload="init()">
+
+    <header class="max-width-1440">
+        <img src="./assets/icons/favicon.png" alt="">
+    </header>
+
+    <section class="input-section">
+        <form class="input-container" onsubmit="addNote(); return false">
+            <h1>Mein Notizblock</h1>
+            <input id="title_input" class="title-input" type="text" placeholder="Titel eingeben..." required>
+            <textarea id="note_input" class="note-input" type="text" placeholder="Notiz eingeben..."
+                required></textarea>
+            <!-- <input id="note_input" class="note-input" type="text" placeholder="Notiz eingeben..." required> -->
+            <input class="save-btn" type="submit" value="Notiz speichern">
+            <div class="archive-trash-container">
+                <a class="icon-box" href="" onclick="openOverlay('overlay-archive'); return false"><img class="icon"
+                        src="./assets/icons/archive.png" alt="">Archiv</a>
+                <a class="icon-box" href="" onclick="openOverlay('overlay-trash'); return false"><img class="icon"
+                        src="./assets/icons/trash.png" alt="">Papierkorb</a>
+            </div>
+        </form>
+    </section>
+
+    <section class="notes-section max-width-1440">
+        <h2>Meine Notizen</h2>
+        <div class="content-container" id="content"></div>
+    </section>
+
+    <section id="overlay-archive" class="overlay overlay-closed max-width-1440"
+        onclick="closeOverlay('overlay-archive')">
+        <img class="close-img" src="./assets/icons/close.png" alt="">
+        <h2>Mein Archiv</h2>
+        <div class="content-container" id="archive_content"></div>
+    </section>
+
+    <section id="overlay-trash" class="overlay overlay-closed max-width-1440" onclick="closeOverlay('overlay-trash')">
+        <img class="close-img" src="./assets/icons/close.png" alt="">
+        <h2>Mein Papierkorb</h2>
+        <div class="content-container" id="trash_content"></div>
+        </div>
+    </section>
+
+</body>
+
+</html>

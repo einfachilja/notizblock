@@ -1,0 +1,26 @@
+/* /* Für den Style der Note Karte  */
+
+.content-card {
+  background-color: #1e1e1e;
+  padding: 12px;
+  margin: 4px;
+  color: #d97b4a;
+  border-radius: 8px;
+  min-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+}
+
+.content-card:hover {
+  background-color: rgba(217, 123, 74, 0.2);
+}
+
+.content-card-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

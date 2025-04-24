@@ -1,0 +1,29 @@
+/* Für Komponenenten wie z.B. Buttons, da diese an verschiedenen Stellen verwendet werden können */
+
+.save-btn {
+  border: none;
+  background-color: #d97b4a;
+  color: #c4c3c3;
+  padding: 8px 20px 8px 20px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.save-btn:hover {
+  cursor: pointer;
+  background-color: rgba(217, 124, 74, 0.8);
+}
+
+.icon {
+  height: 32px;
+  cursor: pointer;
+}
+
+.close-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 24px;
+  height: 24px;
+  cursor: pointer;
+}

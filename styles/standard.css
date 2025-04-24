@@ -1,0 +1,147 @@
+/* Für Standard-Sytles */
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
+}
+
+.max-width-1440 {
+  max-width: 1440px;
+  margin: auto;
+}
+
+header {
+  padding: 24px;
+}
+
+body {
+  background-color: #121212;
+  color: #d97b4a;
+}
+
+a {
+  text-decoration: none;
+  color: #d97b4a;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+.input-container {
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  gap: 8px;
+}
+
+.title-input {
+  background-color: #1e1e1e;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  color: #d58c65;
+  width: 100%;
+}
+
+.title-input::placeholder {
+  color: #d58c65;
+}
+
+.title-input:focus {
+  outline: 1px solid #d58c65;
+}
+
+.note-input {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 8px;
+  color: #d58c65;
+  width: 100%;
+  padding: 8px 0 80px 8px;
+  resize: none;
+}
+
+.note-input::placeholder {
+  color: #d58c65;
+}
+
+.note-input:focus {
+  outline: 1px solid #d58c65;
+}
+
+.archive-trash-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notes-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #121212;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 250ms;
+  transform: translateY(0);
+  padding-top: 160px;
+}
+
+.overlay-closed {
+  transform: translateY(100%);
+}
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  flex-direction: row-reverse;
+}
