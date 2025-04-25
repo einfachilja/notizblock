@@ -2,24 +2,24 @@
 function getNoteTemplate(indexNote) {
   return ` 
         <div class="content-card">
-            <b>${notesTitles[indexNote]}</b><br>
-            ${notes[indexNote]}
+            <b>${allNotes.notesTitles[indexNote]}</b><br>
+            ${allNotes.notes[indexNote]}
             <div class="content-card-box">
-                <img class="icon" src="./assets/icons/archive.png" onclick="noteToArchive(${indexNote})"  alt="">
-                <img class="icon" src="./assets/icons/trash.png" onclick="noteToTrash(${indexNote})" alt="">
+                <img class="icon" src="./assets/icons/archive.png" onclick="moveNote(${indexNote},'notes','archiveNotes')"  alt="">
+                <img class="icon" src="./assets/icons/trash.png" onclick="moveNote(${indexNote}, 'notes', 'trashNotes')" alt="">
             </div>
         </div>
     `;
 }
 
 function getArchiveNoteTemplate(indexArchiveNote) {
-    return ` 
+  return ` 
     <div class="content-card" onclick="onclickProtection(event)">
-        <b>${archiveNotesTitles[indexArchiveNote]}</b><br>
-        ${archiveNotes[indexArchiveNote]}
+        <b>${allNotes.archiveNotesTitles[indexArchiveNote]}</b><br>
+        ${allNotes.archiveNotes[indexArchiveNote]}
         <div class="content-card-box">
-            <img class="icon" src="./assets/icons/favicon.png" onclick="archiveNoteToNote(${indexArchiveNote})"  alt=""> 
-            <img class="icon" src="./assets/icons/trash.png" onclick="archiveNoteToTrash(${indexArchiveNote})" alt="">
+            <img class="icon" src="./assets/icons/favicon.png" onclick="moveNote(${indexArchiveNote},'archiveNotes','notes')"  alt=""> 
+            <img class="icon" src="./assets/icons/trash.png" onclick="moveNote(${indexArchiveNote},'archiveNotes','trashNotes')" alt="">
         </div>
     </div>
 `;
@@ -29,10 +29,10 @@ function getArchiveNoteTemplate(indexArchiveNote) {
 function getTrashNoteTemplate(indexTrashNote) {
   return ` 
         <div class="content-card" onclick="onclickProtection(event)">
-            <b>${trashNotesTitles[indexTrashNote]}</b><br>
-            ${trashNotes[indexTrashNote]} 
+            <b>${allNotes.trashNotesTitles[indexTrashNote]}</b><br>
+            ${allNotes.trashNotes[indexTrashNote]} 
             <div class="content-card-box">
-                <img class="icon" src="./assets/icons/favicon.png" onclick="trashNoteToNote(${indexTrashNote})" alt="">
+                <img class="icon" src="./assets/icons/favicon.png" onclick="moveNote(${indexTrashNote},'trashNotes','notes')" alt="">
                 <img class="icon" src="./assets/icons/trash.png" onclick="deleteNote(${indexTrashNote})" alt="">
             </div>
         </div>
