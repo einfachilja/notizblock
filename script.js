@@ -89,10 +89,16 @@ function addNote() {
   allNotes.notes.push(noteInput); // Neuen Wert in Array notes pushen
 
   saveToLocalStorage();
-  renderNotes(); // Neu landen der Notizen
+  renderAllNotes(); // Neu landen der Notizen
 
   titleInputRef.value = ""; // Eingabe Titel leeren
   noteInputRef.value = ""; // Eingabe Nachricht leeren
+}
+
+function renderAllNotes() {
+  renderNotes();
+  renderArchiveNotes();
+  renderTrashNotes();
 }
 
 // notizen verschieben
@@ -106,9 +112,7 @@ function moveNote(indexNote, startKey, destinationKey) {
   let note = allNotes[startKey].splice(indexNote, 1); // Splice returned den "gelöschten" wert
   allNotes[destinationKey].push(note[0]); // Mit Index 0, sonst pushen wir es als Array, was nicht gut ist!
   saveToLocalStorage();
-  renderNotes();
-  renderArchiveNotes();
-  renderTrashNotes();
+  renderAllNotes();
 }
 
 // notizen löschen
@@ -119,8 +123,7 @@ function deleteNote(indexTrashNote) {
   allNotes.trashNotesTitles.splice(indexTrashNote, 1); // splice-Methode, die in TrashNotesTitles 1 Element mit dem index indesTrahsNote löscht usw.
   allNotes.trashNotes.splice(indexTrashNote, 1);
   saveToLocalStorage(); // Änderung in den local Storage speichern
-  renderNotes(); // Nach Änderung renderNotes() laden und Veränderung zu sehen
-  renderTrashNotes(); // Nach Änderung renderTrashNotes laden um Veränderung zu sehen
+  renderAllNotes(); // Nach Änderung rendern um Veränderungen zu sehen
 }
 
 // notiz in local storage speichern
